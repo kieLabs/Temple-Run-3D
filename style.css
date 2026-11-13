@@ -12,3 +12,5 @@
 .toast{position:absolute;z-index:7;top:17%;left:50%;transform:translate(-50%,-10px);opacity:0;padding:10px 18px;border-radius:999px;background:rgba(238,202,103,.95);color:#172016;font-weight:900;font-size:12px;transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(min-width:900px){.mobile-controls{display:none!important}.panel{transform:translateY(2vh)}}
 @media(max-width:600px){.hud{align-items:flex-start}.brand{font-size:12px}.stats{gap:5px}.stat{min-width:58px;padding:6px 7px;column-gap:4px}.stat span{font-size:15px}.stat small{font-size:7px}.icon-btn{width:34px;height:34px}.footer-hint{display:none}.help{font-size:8px}}
+
+.startup-error{position:fixed;z-index:30;inset:0;display:grid;place-items:center;padding:24px;background:rgba(5,14,10,.96);color:#fff;text-align:center}.startup-error>div{max-width:520px;padding:26px;border:1px solid #d5ad55;border-radius:18px;background:#10251a;box-shadow:0 18px 60px #0008}.startup-error strong{color:#f4cc69;letter-spacing:.12em}.startup-error p{line-height:1.6;color:#d5e0d3}.startup-error small{color:#ffb6a9;overflow-wrap:anywhere}

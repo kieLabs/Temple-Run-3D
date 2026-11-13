@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="startup-error" class="startup-error hidden" role="alert">
+  <div><strong>GAME COULD NOT START</strong><p>3D engine load nahi hua. Internet connection check karke page refresh karein.</p><small id="startup-error-detail">Three.js / WebGL initialization failed.</small></div>
+</div>
 <div id="game-root">
   <div id="hud" class="hud hidden">
     <div class="brand">TEMPLE <b>RUN</b><small>JUNGLE ESCAPE</small></div>
@@ -51,6 +54,19 @@
   <div class="footer-hint">SWIPE OR USE ARROW KEYS</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+if (!window.THREE) {
+  document.write('<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"><\/script>');
+}
+window.addEventListener('error', function (event) {
+  if (event && event.message) {
+    var panel = document.getElementById('startup-error');
+    var detail = document.getElementById('startup-error-detail');
+    if (panel && /THREE|WebGL|Capsule|undefined|null/i.test(event.message)) panel.classList.remove('hidden');
+    if (detail) detail.textContent = event.message;
+  }
+});
+</script>
 <script src="js/pbr_materials.js"></script>
 <script src="js/world_builder.js"></script>
 <script src="js/game.js"></script>
