@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#10231b">
+<meta name="description" content="Temple Run 3D - an endless jungle temple runner. Dodge traps, leap over ruins and collect ancient coins.">
+<title>Temple Run 3D — Jungle Escape</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-root">
+  <div id="hud" class="hud hidden">
+    <div class="brand">TEMPLE <b>RUN</b><small>JUNGLE ESCAPE</small></div>
+    <div class="stats">
+      <div class="stat"><span>🏆</span><strong id="score">0</strong><small>SCORE</small></div>
+      <div class="stat"><span>🪙</span><strong id="coins">0</strong><small>COINS</small></div>
+      <div class="stat"><span>🛡️</span><strong id="shield">OFF</strong><small>SHIELD</small></div>
+    </div>
+    <button id="pause-btn" class="icon-btn" aria-label="Pause">Ⅱ</button>
+  </div>
+
+  <div id="start-screen" class="screen">
+    <div class="panel">
+      <div class="eyebrow">AN ANCIENT WORLD AWAITS</div>
+      <h1>TEMPLE <span>RUN</span></h1>
+      <p>Run through forgotten ruins. Escape the jungle. Collect the lost gold.</p>
+      <button id="start-btn" class="primary-btn">START RUN <span>▶</span></button>
+      <div class="help">← → CHANGE LANE &nbsp; • &nbsp; ↑ JUMP &nbsp; • &nbsp; ↓ SLIDE</div>
+    </div>
+  </div>
+
+  <div id="pause-screen" class="screen hidden">
+    <div class="panel compact"><div class="eyebrow">TAKE A BREATHER</div><h2>PAUSED</h2><button id="resume-btn" class="primary-btn">RESUME RUN</button></div>
+  </div>
+
+  <div id="gameover" class="screen hidden">
+    <div class="panel compact">
+      <div class="eyebrow">THE JUNGLE CAUGHT YOU</div><h2>RUN OVER</h2>
+      <div class="result"><div><strong id="final-score">0</strong><small>SCORE</small></div><div><strong id="final-coins">0</strong><small>COINS</small></div></div>
+      <button id="again-btn" class="primary-btn">RUN AGAIN ↻</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <div id="mobile-controls" class="mobile-controls hidden">
+    <button data-action="left" aria-label="Move left">‹</button>
+    <div><button data-action="jump" aria-label="Jump">↑</button><button data-action="slide" aria-label="Slide">↓</button></div>
+    <button data-action="right" aria-label="Move right">›</button>
+  </div>
+  <div class="footer-hint">SWIPE OR USE ARROW KEYS</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/pbr_materials.js"></script>
+<script src="js/world_builder.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
